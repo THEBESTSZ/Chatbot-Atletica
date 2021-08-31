@@ -1,0 +1,37 @@
+AtleticaBot By William Felipe Tsubota - 2017.1904.056-7 e Matheus Albuquerque de melo - 2016.1907.030-8
+
+O projeto final possui uma pasta dataset com arquivos txt de dados, os seguintes arquivos:
+-answers: resposta pré-definidas do bot
+-dataset: exemplos para treinar os algoritmos com nossas intenções: saudação,despedida,comprar, 'festas' significa ver festas, associacao e 'produtos' que siginifica ver produtos.
+-entitylabel: contém os tipos de produtos, os tipos de festas e as entidades relacionadas a numeral para auxiliar no reconhecimento de entidades.
+-prices: contém os preços de cada produto ou ingresso vendido pela atlética
+
+Dentro da pasta raiz contém:
+
+-Compact version - executa somente o algoritmo que teve melhor acurácia no full version;
+
+-Compact version telegram edition - executa somente o algoritmo que teve melhor acurácia no full version com integração com telegram;
+
+-Full version - executa todos os algoritmos e escolhe o que teve a melhor acuracia dentre todos (gera arquivos csv);
+
+-Full version telegram edition - executa todos os algoritmos e escolhe o que teve a melhor acuracia dentre todos (gera arquivos csv) com integração com telegram;
+
+-Os arquivos csv com relátorios de cada algoritmo que são gerado pelos códigos executas acima depois da primeira execução dos algoritmos.
+
+Para conversar com bot via telegram basta:
+-instalar pip install telepot( telepot foi a API usada para integração) 
+-executar o Compact version telegram edition ou Full version telegram edition
+-criar uma conta ou usar sua conta existente no telegram e acessar o link para abrir o chat com o bot : t.me/Atletica_Bot
+
+Token do bot : 1068781728:AAHzAn8YB5nKReVCqKJGhY2j3KpyhQN9c3s que foi usado dentro dos arquivos de integração.
+
+
+Fluxo:
+O chatbot calcula prediz a intenção do texto que o usuário digitou e responde de acordo coma intenção. Tem peculiaridades para as intenções:
+- saudacao -> Existe 4/8 de chances de responder com uma saudação específica de horário, as outras 4 intenção são respostas aleatórias
+- festas -> Lista as festas e os preços
+- produtos -> Lista os produtos e os preços
+- comprar -> Usado para comprar produtos ou ingressos de festas, ele gera nota fiscal com todos os itens pedidos em uma mesma frase e mostra o valor total (esta intenção exige que seja digitado numerais e itens na mesma proporção, e diferentes de 0, ex: 6 numerais, 3 produtos e 3 ingressos de festas, isso totalizará 6 tipos de itens e suas respectivas quantidades)
+
+Obs: para a integração com o telegram foi utilizado assincronismo, ou seja, ele é capaz de responder todas as requisições de vários usários, de maneira que espere responder um usuário por vez, portanto saberá a quem responder e com qual mensagem responder
+
